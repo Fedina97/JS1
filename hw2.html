@@ -108,10 +108,15 @@ function sayQuantity(){
       alert('Ваша сумма в ' + enter + ' рублей успешно зачислена');
       break;
     default:
+      if (enter >= 0){
       alert('Ваша сумма в ' + enter + ' рублей успешно зачислена');
+      } 
+      else {
+        alert('Введите еще раз!');
+      }
       break;
+    } 
   }
-}
 console.log(sayQuantity());
     </script>
 </body>
