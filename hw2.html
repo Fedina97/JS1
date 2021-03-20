@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Задание 1
+//пример 1
+let a = 1, b = 1, c, d;
+c = ++a;
+alert(c); // ответ: 2
+// префиксная форма сначала произведет увеличение, а потом уже запишет число в переменную с
+//пример 2
+d = b++;
+alert(d); //ответ: 1
+// постфиксная форма передаст начальное значение переменной в с, а потом прибавит на 1
+//пример 3
+c = 2 + ++a;
+alert(c); //ответ: 5
+// так как у переменной а был итерация , то к значению 2 прибавляется еще 1, а 3 плюс 2 равно 5
+//пример 4
+d = 2 + b++;
+alert(d); //ответ: 4
+// в переменную д выведется число 4, потому что у d постфиксная форма
+alert(a); //3
+// выведет 3, потому что у переменной а было 2 итерации
+alert(b); //3
+// выведет 3, потому что у переменной b было 2 итерации
+
+// Задание 2
+let a = 2;
+let x = 1 + (a *= 2);
+// а *= 2 -> a = a * 2 -> a = 4;
+// x = 1 + 4 = 5
+// ответ: a = 4; x = 5
+
+//Задание 3
+let k = 6;
+let m = 10;
+if (k >= 0 && m >= 0) {
+    console.log(k - m);
+}
+else if (k < 0 && m < 0) {
+    console.log(k * m);
+}
+else{
+    console.log(k + m);
+}
+ // Задание 4 - 5
+
+ function sum (arg1, arg2){
+     return arg1 + arg2;
+ } 
+ function subst (arg1, arg2){
+     return arg1 - arg2;
+ }
+ function div (arg1, arg2){
+     return arg1 / arg2;
+ }
+ function multy (arg1, arg2){
+     return arg1 * arg2;
+ }
+
+ function MathOperation(arg1, arg2, operation){
+     switch(operation){
+         case sum:
+             return sum(arg1, arg2);
+        case subst:
+            return subst(arg1, arg2);
+        case div:
+            return div(arg1, arg2);
+        case multy:
+            return multy(arg1, arg2);
+     }
+ }
+ console.log(sum(10,15));
+ console.log(subst(10,15));
+ console.log(div(10,15));
+ console.log(multy(10,15));
+
+
+ //Задание 6
+
+ let enter = +prompt('Введите сумму в рублях: ');
+ let lastElement = enter % 100;
+function sayQuantity(){
+  switch(lastElement){
+    case 0:
+      alert('Ваша сумма в ' + enter + ' рублей успешно зачислена');
+      break;
+    case 1:
+      alert('Ваша сумма в ' + enter + ' рубль успешно зачислена');
+      break;
+    case 2:
+    case 3:
+    case 4:
+      alert('Ваша сумма в ' + enter + ' рубля успешно зачислена');
+      break;
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+      alert('Ваша сумма в ' + enter + ' рублей успешно зачислена');
+      break;
+    default:
+      if (enter >= 0){
+      alert('Ваша сумма в ' + enter + ' рублей успешно зачислена');
+      } 
+      else {
+        alert('Введите еще раз!');
+      }
+      break;
+    } 
+  }
+console.log(sayQuantity());
+    </script>
+</body>
+</html>
