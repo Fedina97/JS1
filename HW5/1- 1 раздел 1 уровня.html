@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница 1</title>
+</head>
+
+<body>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+            </p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+
+    <a href="#">link1</a>
+    <a href="#">link2</a>
+    <a href="#">link3</a>
+    <a href="#" id="four">link4</a>
+
+    <p class="one">параграф 1</p>
+    <p>параграф</p>
+    <p class="one">параграф 2</p>
+    <h3 class="one">заголовок 1</h3>
+    <h3>заголовок 2</h3>
+
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+
+    <!-- Задание. Используя поиск по id, получите ссылку с текстом link4
+    и выведите ее в консоль. -->
+
+    <script>
+        let linkFour = document.getElementById('four');
+        console.log(linkFour);
+
+        // Задание. Используя поиск по имени класса, получите все элементы с классом .one
+        // и выведите их в консоль. 
+
+        let oneClass = document.getElementsByClassName('one');
+        console.log(oneClass);
+
+        // Задание. Используя поиск по селектору (метод querySelectorAll) найдите только те ссылки с
+        // классом .card-link, которые находятся в .card-body
+        // и выведите их в консоль. 
+
+        let links = document.querySelectorAll('.card-body .card-link');
+        console.log(links);
+
+        // Задание. Используя поиск по селектору (метод querySelector) найдите div с атрибутом
+        //   aria-valuenow="50" и выведите его в консоль. -->
+
+        let divWithAttribute = document.querySelector('div[aria-valuenow="50"]');
+        console.log(divWithAttribute);
+
+        // Задание. Выведите содержимое тега title в консоль. 
+
+        let titleText = document.querySelector('title');
+        console.log(titleText.innerHTML);
+    </script>
+</body>
+
+</html>
