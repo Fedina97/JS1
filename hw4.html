@@ -72,70 +72,71 @@
         //1.2
 
         //a)
-        // function Post(author, text, date) {
-        //     this.author = author;
-        //     this.text = text;
-        //     this.date = date;
-        // }
+        debugger;
 
-        // Post.prototype.edit = function () {
-        //     text = this.text;
-        // }
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
 
-        // let newPost = new Post('Петя', 'Hello', '21.03.2021');
+        Post.prototype.edit = function () {
+            text = this.text;
+        }
+
+        let newPost = new Post('Петя', 'Hello', new Date());
+        newPost.edit('Hello');
+        console.log(newPost);
 
         //b)
 
-        // function AttachedPost(author, text, date, author2, text2, date2) {
-        //     Post.call(this, author, text, date);
-        //     highlighted = false;
-        // }
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            highlighted = false;
+        }
 
-        // AttachedPost.prototype = Object.create(Post.prototype);
-        // AttachedPost.prototype.constructor = AttachedPost;
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
 
-        // AttachedPost.prototype.makeTextHighlighted = function () {
-        //     this.highlighted = true;
-        // }
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
 
-        // let secondObj = new AttachedPost('Петя', 'Hello', '21.03.2021', 'Вася', 'Hello', '22.03.2021');
-        // secondObj.makeTextHighlighted();
-        // console.log(secondObj);
-        // newPost.edit();
-        // console.log(newPost);
+        let secondObj = new AttachedPost('Вася', 'Привет', new Date());
+        secondObj.makeTextHighlighted();
+        console.log(secondObj);
 
         //es6
-        debugger;
-        class Post {
-            constructor(author, text, date) {
-                this.author = author;
-                this.text = text;
-                this.date = date;
-            }
+        // debugger;
+        // class Post {
+        //     constructor(author, text, date) {
+        //         this.author = author;
+        //         this.text = text;
+        //         this.date = date;
+        //     }
 
-            edit() {
-                text = this.text;
-            }
-        }
+        //     edit() {
+        //         text = this.text;
+        //     }
+        // }
+        //let newPost = new Post('Петя', 'Hello', new Date());
+        //newPost.edit('Hello');
+        //console.log(newPost);
 
-        class AttachedPost extends Post {
-            constructor(author, text, date, author2, text2, date2) {
-                super(author, text, date);
-                this.author2 = author2;
-                this.text2 = text2;
-                this.date2 = date2;
-                this.highlighted = false;
-            }
+        // class AttachedPost extends Post {
+        //     constructor(author, text, date) {
+        //         super(author, text, date);
+        //         this.highlighted = false;
+        //     }
 
-            makeTextHighlighted() {
-                this.highlighted = true;
-            }
-        }
+        //     makeTextHighlighted() {
+        //         this.highlighted = true;
+        //     }
+        // }
 
-        let secondObj = new AttachedPost('Петя', 'Hello', '21.03.2021', 'Вася', 'Hello', '22.03.2021');
-        secondObj.makeTextHighlighted();
-        console.log()
-        console.log(secondObj);
+        // let secondObj = new AttachedPost('Вася', 'Привет', new Date());
+        // secondObj.makeTextHighlighted();
+        // console.log(secondObj);
 
         //2
     </script>
