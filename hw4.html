@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use script';
+        // Задание 1
+        let a = Math.round(Math.random() * 1100);
+        console.log(a);
+
+        function toObject(a) {
+            if (a > 999 || a < 0) {
+                console.log('Недопустимое число');
+                return {};
+            } else {
+                return {
+                    hundreds: Math.floor(a / 100),
+                    tens: Math.floor(a / 10) % 10,
+                    ones: a % 10
+                }
+            }
+        }
+        console.log(toObject(a));
+
+        // 1.1 
+
+        //es5
+
+        // function Product(name, price) {
+        //     this.name = name;
+        //     this.price = price;
+        // }
+
+        // Product.prototype.make25PercentDiscount = function () {
+        //     this.price *= 0.75;
+        // }
+
+        // let newProduct = new Product('Джинсы', 2500);
+        // let newProduct2 = new Product('Пальто', 8500);
+        // newProduct.make25PercentDiscount();
+        // newProduct2.make25PercentDiscount();
+        // console.log(newProduct);
+        // console.log(newProduct2);
+
+        //es6
+
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            }
+        }
+
+        let newProduct = new Product('Джинсы', 2500);
+        let newProduct2 = new Product('Пальто', 8500);
+        newProduct.make25PercentDiscount();
+        newProduct2.make25PercentDiscount();
+        console.log(newProduct);
+        console.log(newProduct2);
+
+        //1.2
+
+        //a)
+        debugger;
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function () {
+            text = this.text;
+        }
+
+        let newPost = new Post('Петя', 'Hello', new Date());
+        newPost.edit('Hello');
+        console.log(newPost);
+
+        //b)
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        let secondObj = new AttachedPost('Вася', 'Привет', new Date());
+        secondObj.makeTextHighlighted();
+        console.log(secondObj);
+
+        //es6
+        // debugger;
+        // class Post {
+        //     constructor(author, text, date) {
+        //         this.author = author;
+        //         this.text = text;
+        //         this.date = date;
+        //     }
+
+        //     edit() {
+        //         text = this.text;
+        //     }
+        // }
+        //let newPost = new Post('Петя', 'Hello', new Date());
+        //newPost.edit('Hello');
+        //console.log(newPost);
+
+        // class AttachedPost extends Post {
+        //     constructor(author, text, date) {
+        //         super(author, text, date);
+        //         this.highlighted = false;
+        //     }
+
+        //     makeTextHighlighted() {
+        //         this.highlighted = true;
+        //     }
+        // }
+
+        // let secondObj = new AttachedPost('Вася', 'Привет', new Date());
+        // secondObj.makeTextHighlighted();
+        // console.log(secondObj);
+
+        //2
+    </script>
+</body>
+
+</html>
